@@ -38,7 +38,7 @@
 }
 
 .quizz-playing-answer:hover {
-    font-size: 24px;
+    font-size: 22px;
     transform: scale(1.1);
 }
 
@@ -75,6 +75,6 @@
 }
 
 .quizz-ending-button:hover {
-    font-size: 24px;
+    font-size: 22px;
     transform: scale(1.1);
 }

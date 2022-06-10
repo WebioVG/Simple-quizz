@@ -11,21 +11,32 @@ class Quizz extends React.Component {
         }
     }
 
+    // METHOD: Go to the the next question and check the answer
     nextMove = (index) => {
         
         // Check if the given answer is correct
         if (index == this.state.arrayQuizz[this.state.selectorQuestion].correctAnswer ) {
             this.setState({ score: this.state.score + 1 })
         }
-
+        
         // Increment the selectorQuestion state
         this.setState({ selectorQuestion: this.state.selectorQuestion + 1 })
+    }
+    
+    // METHOD: Retry the quizz
+    retry = () => {
+        this.setState({
+            selectorQuestion: 0,
+            score: 0
+        })
     }
 
     render() {
         return (
             <div className="container-quizz">
                 {this.state.selectorQuestion < 3
+
+                    // Display the questions
                     ?
                     <div className="quizz-playing">
                         <div className="quizz-playing-counter">Question: {this.state.selectorQuestion + 1}/3</div>
@@ -39,15 +50,14 @@ class Quizz extends React.Component {
                         )}
                     </div>
 
+                    // Display the ending screen
                     :
                     <div className="quizz-ending">
                         <h2 className="quizz-ending-title">Votre score est {this.state.score}/3 !</h2>
-                        <button className="quizz-ending-button">Recommencer</button>
+                        <button onClick={this.retry} className="quizz-ending-button">Recommencer</button>
                     </div>
                 }
-
             </div>
-
         )
     }
 }
