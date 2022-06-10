@@ -11,7 +11,14 @@ class Quizz extends React.Component {
         }
     }
 
-    implementSelectorQuestion = () => {
+    nextMove = (index) => {
+        
+        // Check if the given answer is correct
+        if (index == this.state.arrayQuizz[this.state.selectorQuestion].correctAnswer ) {
+            this.setState({ score: this.state.score + 1 })
+        }
+
+        // Increment the selectorQuestion state
         this.setState({ selectorQuestion: this.state.selectorQuestion + 1 })
     }
 
@@ -20,22 +27,22 @@ class Quizz extends React.Component {
             <div className="container-quizz">
                 {this.state.selectorQuestion < 3
                     ?
-                    <div>
-                        <div className="quizz-counter">Question: {this.state.selectorQuestion + 1}/3</div>
+                    <div className="quizz-playing">
+                        <div className="quizz-playing-counter">Question: {this.state.selectorQuestion + 1}/3</div>
 
-                        <h2 className="quizz-title">{this.state.arrayQuizz[this.state.selectorQuestion].question}</h2>
+                        <h2 className="quizz-playing-title">{this.state.arrayQuizz[this.state.selectorQuestion].question}</h2>
 
-                        {this.state.arrayQuizz[this.state.selectorQuestion].answers.map(answer =>
-                            <div onClick={this.implementSelectorQuestion} className="quizz-answer">
+                        {this.state.arrayQuizz[this.state.selectorQuestion].answers.map((answer, index) =>
+                            <div onClick={() => this.nextMove(index)} className="quizz-playing-answer" key={index}>
                                 {answer}
                             </div>
                         )}
                     </div>
 
                     :
-                    <div className="container-ending">
-                        <h2 className="container-ending-title">Votre score est {this.state.score}/3 !</h2>
-                        <button className="container-ending-button">Recommencer</button>
+                    <div className="quizz-ending">
+                        <h2 className="quizz-ending-title">Votre score est {this.state.score}/3 !</h2>
+                        <button className="quizz-ending-button">Recommencer</button>
                     </div>
                 }
 
