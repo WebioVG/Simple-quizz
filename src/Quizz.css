@@ -1,6 +1,13 @@
 .container-quizz {
+    /* Glassmorphism */
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
     align-items: center;
-    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,13 +18,20 @@
 }
 
 .quizz-answer {
-    background-color: lightblue;
+    background-color: rgba(0, 0, 255, 0.7);
+    border-radius: 15px;
     color: #fff;
     font-size: 20px;
     margin: 0.5rem;
     padding: 8px 0;
     text-align: center;
+    transition-duration: 200ms;
     width: 80%;
+}
+
+.quizz-answer:hover {
+    font-size: 24px;
+    transform: scale(1.1);
 }
 
 .quizz-counter {
