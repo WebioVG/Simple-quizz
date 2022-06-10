@@ -2,6 +2,8 @@ import React from "react";
 import './Quizz.css';
 
 class Quizz extends React.Component {
+
+    // CONSTRUCTOR
     constructor(props) {
         super(props)
         this.state = {
@@ -31,18 +33,25 @@ class Quizz extends React.Component {
         })
     }
 
+    // RENDER
     render() {
         return (
             <div className="container-quizz">
+
+                {/* Check what to display between the quizz and the ending screen */}
                 {this.state.selectorQuestion < this.state.arrayQuizz.length
 
                     // Display the questions
                     ?
                     <div className="quizz-playing">
+
+                        {/* Counter */}
                         <div className="quizz-playing-counter">Question: {this.state.selectorQuestion + 1}/{ this.state.arrayQuizz.length }</div>
 
+                        {/* Title */}
                         <h2 className="quizz-playing-title">{this.state.arrayQuizz[this.state.selectorQuestion].question}</h2>
 
+                        {/* Questions */}
                         {this.state.arrayQuizz[this.state.selectorQuestion].answers.map((answer, index) =>
                             <div onClick={() => this.nextMove(index)} className="quizz-playing-answer" key={index}>
                                 {answer}
@@ -53,7 +62,11 @@ class Quizz extends React.Component {
                     // Display the ending screen
                     :
                     <div className="quizz-ending">
+
+                        {/* Score */}
                         <h2 className="quizz-ending-title">Votre score est {this.state.score}/{ this.state.arrayQuizz.length } !</h2>
+
+                        {/* Retry button */}
                         <button onClick={this.retry} className="quizz-ending-button">Recommencer</button>
                     </div>
                 }
