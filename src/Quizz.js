@@ -34,12 +34,12 @@ class Quizz extends React.Component {
     render() {
         return (
             <div className="container-quizz">
-                {this.state.selectorQuestion < 3
+                {this.state.selectorQuestion < this.state.arrayQuizz.length
 
                     // Display the questions
                     ?
                     <div className="quizz-playing">
-                        <div className="quizz-playing-counter">Question: {this.state.selectorQuestion + 1}/3</div>
+                        <div className="quizz-playing-counter">Question: {this.state.selectorQuestion + 1}/{ this.state.arrayQuizz.length }</div>
 
                         <h2 className="quizz-playing-title">{this.state.arrayQuizz[this.state.selectorQuestion].question}</h2>
 
@@ -53,7 +53,7 @@ class Quizz extends React.Component {
                     // Display the ending screen
                     :
                     <div className="quizz-ending">
-                        <h2 className="quizz-ending-title">Votre score est {this.state.score}/3 !</h2>
+                        <h2 className="quizz-ending-title">Votre score est {this.state.score}/{ this.state.arrayQuizz.length } !</h2>
                         <button onClick={this.retry} className="quizz-ending-button">Recommencer</button>
                     </div>
                 }

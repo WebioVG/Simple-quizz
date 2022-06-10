@@ -1,0 +1,29 @@
+{
+    "questions": [
+        {
+            "question": "Combien font 1 + 1 ?",
+            "answers": [ "2", "4", "5", "10"],
+            "correctAnswer": 0
+        },
+        {
+            "question": "Quel arrondi correspond le mieux à pi ?",
+            "answers": [ "2.15", "3.07", "3.14", "4.13"],
+            "correctAnswer": 2
+        },
+        {
+            "question": "À quoi sert le PGCD ?",
+            "answers": [ "À trouver la racine cube d'un nombre", "À déterminer si deux nombres sont multipliables", "À trouver le diviseur commun d'un nombre", "42 est la réponse universelle"],
+            "correctAnswer": 2
+        },
+        {
+            "question": "Comment s'écrit le nombre 13 en binaire ?",
+            "answers": [ "1101", "1011", "111", "Le binaire n'existe pas"],
+            "correctAnswer": 0
+        },
+        {
+            "question": "L'expression 'f(x) = ax + b' correspond-elle à une fonction exponentielle.",
+            "answers": [ "Vrai", "Faux"],
+            "correctAnswer": 1
+        }
+    ]
+}
