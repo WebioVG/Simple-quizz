@@ -21,8 +21,23 @@
             "correctAnswer": 0
         },
         {
-            "question": "L'expression 'f(x) = ax + b' correspond-elle à une fonction exponentielle.",
+            "question": "L'expression 'f(x) = ax + b' correspond à une fonction exponentielle.",
             "answers": [ "Vrai", "Faux"],
+            "correctAnswer": 1
+        },
+        {
+            "question": "Le bois est vivant.",
+            "answers": [ "Vrai", "Faux"],
+            "correctAnswer": 1
+        },
+        {
+            "question": "À quelle distance de la Terre se trouve la lune ?",
+            "answers": [ "384 400km", "518 400km", "732 000km"],
+            "correctAnswer": 0
+        },
+        {
+            "question": "À quelle distance de la Terre se trouve le soleil ?",
+            "answers": [ "150 * 10^5km", "150 * 10^6km", "150 * 10^7km", "150 * 10^9km"],
             "correctAnswer": 1
         }
     ]
