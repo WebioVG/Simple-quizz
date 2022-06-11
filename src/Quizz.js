@@ -24,9 +24,16 @@ class Quizz extends React.Component {
         // Increment the selectorQuestion state
         this.setState({ selectorQuestion: this.state.selectorQuestion + 1 })
     }
+
+    // METHOD: Load a new quizz
+    loadNewQuizz = () => {
+        this.props.reload()
+        this.setState({ arrayQuizz: this.props.quizz })
+        this.retryCurrentQuizz()
+    }
     
     // METHOD: Retry the quizz
-    retry = () => {
+    retryCurrentQuizz = () => {
         this.setState({
             selectorQuestion: 0,
             score: 0
@@ -48,10 +55,10 @@ class Quizz extends React.Component {
                         {/* Counter */}
                         <div className="quizz-playing-counter">Question: {this.state.selectorQuestion + 1}/{ this.state.arrayQuizz.length }</div>
 
-                        {/* Title */}
+                        {/* Question */}
                         <h2 className="quizz-playing-title">{this.state.arrayQuizz[this.state.selectorQuestion].question}</h2>
 
-                        {/* Questions */}
+                        {/* Answers */}
                         {this.state.arrayQuizz[this.state.selectorQuestion].answers.map((answer, index) =>
                             <div onClick={() => this.nextMove(index)} className="quizz-playing-answer" key={index}>
                                 {answer}
@@ -67,7 +74,10 @@ class Quizz extends React.Component {
                         <h2 className="quizz-ending-title">Votre score est {this.state.score}/{ this.state.arrayQuizz.length } !</h2>
 
                         {/* Retry button */}
-                        <button onClick={this.retry} className="quizz-ending-button">Recommencer</button>
+                        <button onClick={this.retryCurrentQuizz} className="quizz-ending-button">Recommencer ce quizz</button>
+
+                        {/* Load a new quizz button */}
+                        <button onClick={this.loadNewQuizz} className="quizz-ending-button">Nouveau quizz</button>
                     </div>
                 }
             </div>

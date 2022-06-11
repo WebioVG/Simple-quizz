@@ -16,9 +16,9 @@ class App extends React.Component {
   }
 
   // Load the API, get 3 questions and store them
-  componentDidMount() {
+  componentDidMount = () => {
     axios.get('http://localhost:3001/questions').then(response => {
-      
+
       // Get three random indexes
       let indexes = this.getRandom(response.data)
 
@@ -31,7 +31,9 @@ class App extends React.Component {
 
         // End the loading screen
         this.setState({ loading: false })
-      }, 450);  
+
+        console.log(this.state.arrayQuizz)
+      }, 450);
     })
   }
 
@@ -54,7 +56,13 @@ class App extends React.Component {
 
     return resultArray
   }
-  
+
+  // METHOD: Reload the quizz
+  reload = () => {
+    this.setState({ arrayQuizz: [], loading: true })
+    this.componentDidMount()
+  }
+
   // RENDER
   render() {
 
@@ -70,8 +78,7 @@ class App extends React.Component {
     // Quizz page
     return (
       <div className="container">
-        {console.log(this.state.arrayQuizz)}
-        <Quizz quizz={this.state.arrayQuizz} retry={this.componentDidMount} />
+        <Quizz quizz={this.state.arrayQuizz} reload={this.reload} />
       </div>
     )
   }

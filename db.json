@@ -12,7 +12,7 @@
         },
         {
             "question": "À quoi sert le PGCD ?",
-            "answers": [ "À trouver la racine cube d'un nombre", "À déterminer si deux nombres sont multipliables", "À trouver le diviseur commun d'un nombre", "42 est la réponse universelle"],
+            "answers": [ "À trouver la racine cube d'un nombre", "À déterminer si deux nombres sont multipliables", "À trouver le diviseur commun de deux nombres", "42 est la réponse universelle"],
             "correctAnswer": 2
         },
         {
@@ -38,6 +38,36 @@
         {
             "question": "À quelle distance de la Terre se trouve le soleil ?",
             "answers": [ "150 * 10^5km", "150 * 10^6km", "150 * 10^7km", "150 * 10^9km"],
+            "correctAnswer": 1
+        },
+        {
+            "question": "On dit \"un vie\" ou \"une vie\" ? (La Flamme) ",
+            "answers": [ "un vie", "une vie"],
+            "correctAnswer": 1
+        },
+        {
+            "question": "Que veut dire \"un illétré\" ? (La Flamme) ",
+            "answers": [ "Une personne qui ne sait pas lire", "Une personne qui ne sait pas ce qu'est une lettre", "Un homme de lettre"],
+            "correctAnswer": 2
+        },
+        {
+            "question": "En quelle année le Titanic a-t-il coulé ?",
+            "answers": [ "En 1897", "En 1908", "En 1912", "En 1926"],
+            "correctAnswer": 2
+        },
+        {
+            "question": "Quel est le diamètre de la Terre ?",
+            "answers": [ "12 700km", "14 200km", "16 100km", "121 000km"],
+            "correctAnswer": 0
+        },
+        {
+            "question": "En 1970, qui était président des Etats-Unis ?",
+            "answers": [ "George H. W. Bush", "Bill Clinton", "John H. Kennedy", "Richard Nixon"],
+            "correctAnswer": 3
+        },
+        {
+            "question": "Combien trouve-t-on d'océans sur Terre ?",
+            "answers": [ "3", "5", "6", "7"],
             "correctAnswer": 1
         }
     ]
